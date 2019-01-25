@@ -1,0 +1,26 @@
+language: go
+
+go:
+  - master 
+
+install:
+  - go get github.com/spf13/hugo
+
+script:
+  - hugo
+
+deploy:
+  local_dir: public 
+  repo: eco-chamber/eco-chamber.github.io
+  target_branch: master 
+  provider: pages
+  allow-empty-commit: true
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  email: minsiansu@mail.com
+  name: "siansiansu"
+  on:
+    branch: master
+
+# notifications:
+#   slack: 
